@@ -50,7 +50,7 @@ export default {
       loadDataById(){
           //发送请求
           this.axios
-            .get(`http://localhost:3000/heroes/${this.id}`)
+            .get(`heroes/${this.id}`)
             .then((res)=>{
                 // console.log(res)
                 const{data,status}=res;
@@ -64,7 +64,7 @@ export default {
       } ,
       update() {
          this.axios
-            .put(`http://localhost:3000/heroes/${this.id}`,this.formData) 
+            .put(`heroes/${this.id}`,this.formData) 
             .then((res)=>{
                 if(res.status===200){
                     this.$router.push({name:'heroes'})

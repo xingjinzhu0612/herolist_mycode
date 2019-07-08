@@ -72,7 +72,7 @@ export default {
         return false;
       }
       this.axios
-        .delete(`http://localhost:3000/heroes/${id}`)
+        .delete(`heroes/${id}`)
         .then(res => {
           console.log(res);
           const status = res.status;
