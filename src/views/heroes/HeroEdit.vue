@@ -20,7 +20,7 @@
         </select>
       </div>
       <!-- ptrvent 阻止默认行为的执行 -->
-      <button @click.prevent="add" class="btn btn-success">提交</button>
+      <button @click.prevent="update" class="btn btn-success">提交</button>
     </form>
   </div>
 </template>
@@ -61,7 +61,21 @@ export default {
             .catch((err)=>{
 
             })
-      }  
+      } ,
+      update() {
+         axios
+            .put(`http://localhost:3000/heroes/${this.id}`,this.formData) 
+            .then((res)=>{
+                if(res.status===200){
+                    this.$router.push({name:'heroes'})
+                }else{
+                    alert('修改失败')
+                }
+            })
+            .catch((err)=>{
+                alert('服务器错误'+err)
+            })
+      },
     },
 }
 </script>
