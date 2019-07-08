@@ -18,6 +18,7 @@ import WeaponList from './views/weapons/WeaponList.vue'
 import EquipList from './views/equips/EquipList.vue'
 //创建路由对象规则
 const router=new VueRouter({
+  linkActiveClass:'active',
   //配置路由规则
   routes:[
     {name:'home',path:'/',redirect:'/heroes'},
