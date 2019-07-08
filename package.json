@@ -7,9 +7,8 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
-
-  
-  "dependencies": {   
+  "dependencies": {
+    "bootstrap": "^3.3.7",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
@@ -46,5 +45,3 @@
     "last 2 versions"
   ]
 }
-
-
