@@ -34,7 +34,7 @@
 
 <script>
 //导入axios
-import axios from "axios";
+// import axios from "axios";
 export default {
   data() {
     return {
@@ -49,7 +49,7 @@ export default {
   },
   methods: {
     loadData() {
-      axios
+      this.axios
         .get("http://localhost:3000/heroes")
         .then(res => {
           console.log(res);
@@ -71,7 +71,7 @@ export default {
       if (!confirm("确认删除？")) {
         return false;
       }
-      axios
+      this.axios
         .delete(`http://localhost:3000/heroes/${id}`)
         .then(res => {
           console.log(res);

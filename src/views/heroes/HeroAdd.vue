@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 export default {
   data() {
     return {
@@ -39,7 +39,7 @@ export default {
   methods: {
     //2.点击提交按钮,添加英雄
     add() {
-      axios
+      this.axios
         .post("http://localhost:3000/heroes", this.formData)
         .then(res => {
           const status = res.status;
