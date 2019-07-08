@@ -26,7 +26,12 @@
 </template>
 
 <script>
+
+//在组建中获取路由参数$route.param.id
+import axios from 'axios'
 export default {
+    //接收外部传递的参数
+    props:['id'],
     data() {
         return {
             //双向绑定数据
@@ -35,6 +40,28 @@ export default {
                gender:'男'
            } 
         }
+    },
+    //组件加载完毕
+    mounted() {
+        this.loadDataById()
+    },
+    methods: {
+      //根据id 加载英雄数据
+      loadDataById(){
+          //发送请求
+          axios
+            .get(`http://localhost:3000/heroes/${this.id}`)
+            .then((res)=>{
+                // console.log(res)
+                const{data,status}=res;
+                if(status===200){
+                    this.formData=data
+                }
+            })
+            .catch((err)=>{
+
+            })
+      }  
     },
 }
 </script>
